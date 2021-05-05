@@ -140,15 +140,11 @@ namespace Algorythm
 
         public class Permutations
         {
-            //Список перестановок
+
             private List<string> _permutationsList;
             private String _str;
 
-            /// <summary>
-            /// Добавляет новую перестановку в список
-            /// </summary>
-            /// <param name="a">Массив символов
-            /// <param name="repeat">Содержать повторы
+
             private void AddToList(char[] a, bool repeat = true)
             {
                 var bufer = new StringBuilder("");
@@ -163,12 +159,7 @@ namespace Algorythm
 
             }
 
-            /// <summary>
-            /// Рекурсивный поиск всех перестановок
-            /// </summary>
-            /// <param name="a">
-            /// <param name="n">
-            /// <param name="repeat">Содержать повторы
+
             private void RecPermutation(char[] a, int n, bool repeat = true)
             {
                 for (var i = 0; i < n; i++)
@@ -193,9 +184,6 @@ namespace Algorythm
             {
                 _str = str;
             }
-            /// <summary>
-            /// Строка, на основе которой строятся перестановки
-            /// </summary>
             public String PermutationStr
             {
                 get
@@ -207,22 +195,13 @@ namespace Algorythm
                     _str = value;
                 }
             }
-            /// <summary>
-            /// Получает список всех перестановок
-            /// </summary>
-            /// <param name="repeat">Содержать повторения
-            /// <returns></returns>
+
             public List<string> GetPermutationsList(bool repeat = true)
             {
                 _permutationsList = new List<string> { _str };
                 RecPermutation(_str.ToArray(), _str.Length, repeat);
                 return _permutationsList;
             }
-            /// <summary>
-            /// Получает отсортированный список всех перестановок
-            /// </summary>
-            /// <param name="repeat">Содержать повторения
-            /// <returns></returns>
             public List<string> GetPermutationsSortList(bool repeat = true)
             {
                 GetPermutationsList(repeat).Sort();
