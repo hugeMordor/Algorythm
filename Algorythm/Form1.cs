@@ -60,7 +60,7 @@ namespace Algorythm
             k--;
             if (k >= 0) goto L2;
             stopwatch.Stop();
-            textBox3.Text = Convert.ToString(stopwatch.ElapsedTicks);
+            textBox3.Text = Convert.ToString(stopwatch.ElapsedMilliseconds);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace Algorythm
                 listBox1.Items.Add(l);
             }
             stopwatch.Stop();
-            textBox4.Text = Convert.ToString(stopwatch.ElapsedTicks);
+            textBox4.Text = Convert.ToString(stopwatch.ElapsedMilliseconds);
         }
     }
 }
